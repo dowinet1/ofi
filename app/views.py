@@ -10,6 +10,7 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.core import serializers
 from django.contrib.auth.hashers import check_password
+from django.core.mail import EmailMessage, send_mail
 import json
 import smtplib
 import sweetify
@@ -194,6 +195,21 @@ def subir_documentos(request):
 
     mi_usuario = Usuarios.objects.get(tipo=usuario)
     mi_documento = Mi_documento.objects.create(usuario=mi_usuario, documento=save_documento)
+
+    #Envío de notificacion al correo
+    nombre = "Departamento de Jefactura"
+    email = mi_usuario.usuario.email
+    from_email = 'wilderes97@gmail.com'
+    asunto = "Nuevo Documento de Jefactura ISC"
+    mensaje = 'Nuevo documento en bandeja de entrada, ingresar a: http://localhost:8000/'
+    
+    send_mail(
+        asunto,
+        'El ' + nombre + ', envió ' + mensaje,
+        '',
+        [email],
+        fail_silently=False,
+        )
 
     print("Documento guardado con éxito")
 

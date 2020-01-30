@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -86,8 +87,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'oficina',
-        'USER': 'softwil',
-        'PASSWORD': 'Md514529b25b5445906b7c26ba1',
+        'USER': 'solucion',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': ''
 
@@ -146,8 +147,8 @@ MEDIA_URL = '/media/'
 
 #Configuracion para el correo
 
-#EMAIL_USE_TLS = True
-#EMAIL_HOST = 'smtp.gmail.com'
-#EMAIL_HOST_USER = 'correo@gmail.com'
-#EMAIL_HOST_PASSWORD = 'contraseña'
-#EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'oficinaspapel@gmail.com'
+EMAIL_HOST_PASSWORD = 'mocodegorila'
+EMAIL_PORT = 587

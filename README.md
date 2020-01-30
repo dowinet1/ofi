@@ -1,2 +1,0 @@
-# ofi
-proyecto oficna
